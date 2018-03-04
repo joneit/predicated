@@ -1,0 +1,22 @@
+{
+  "name": "predicated",
+  "version": "1.0.0",
+  "description": "Create a predicate function from an expression",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joneit/predicated.git"
+  },
+  "author": "Jonathan Eiten",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joneit/predicated/issues"
+  },
+  "homepage": "https://github.com/joneit/predicated#readme",
+  "dependencies": {
+    "literalz": "^2.0.0"
+  }
+}
