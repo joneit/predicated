@@ -35,6 +35,8 @@ function throwErrorOnUndefinedColumnName(keys, expression) {
         extract = (new Literalz(expression)).extract, // empty out the literals
         parts, variable;
 
+    keys = keys.concat(['true', 'false']);
+
     // search for variable references, excluding property references (with dot operator prefix)
     while ((parts = regexRefs.exec(extract))) {
         variable = parts[1];

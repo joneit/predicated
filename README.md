@@ -96,3 +96,6 @@ converters.rpn = function(expression) {
     return expression;
 }
 ```
+### Revision history
+* `1.0.1` — Correction to: `=` is replaced with `===`
+* `1.0.2` — Add implicit `true` and `false` to option `keys` (when defined)
