@@ -1,6 +1,6 @@
 {
   "name": "predicated",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Create a predicate function from an expression",
   "main": "index.js",
   "scripts": {
