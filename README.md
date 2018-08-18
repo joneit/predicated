@@ -10,6 +10,35 @@ console.log(predicate({ a: 1 })); // true
 console.log(predicate({ a: 2 })); // false
 ```
 
+### What is this?
+
+Suppose you have a list of congruent objects, such as:
+```js
+var dataset = [
+    { sex: 'F', breed:'lab', preowned:true },
+    { sex: 'F', breed:'springer spaniel', preowned:false },
+    { sex: 'M', breed:'springer spaniel', preowned:false },
+    { sex: 'M', breed:'lab', preowned:true },
+]
+```
+Suppose you want to enable users to scan `dataset` with a JavaScript expression, such as:
+```js
+var javascriptSearchArgument = "sex === 'M' && !preowned" // male dogs with no previous owner
+```
+`predicated` takes such a search argument and produces a predicate function suitable for use with [`Array.prototype.filter`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) (or [`Array.prototype.find`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/find) if you just want the first hit):
+```js
+var hits = dataset.filter(compile(javascriptSearchArgument))
+```
+Additionally, suppose your users prefer more traditional syntax over JavaScript, such as:
+```js
+var traditionalSearchArgument = 'sex = "M" AND NOT preowned'
+```
+`predicated` has an option translate such "traditional" syntax to JavaScript:
+```js
+var hits = dataset.filter(compile(traditionalSearchArgument, { syntax: 'traditional' }))
+```
+`predicated`'s library of syntax translators is extensible.
+
 ### Options
 
 There are three options:
